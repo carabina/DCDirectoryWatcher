@@ -111,11 +111,11 @@ public class DCDirectoryWatcher {
         
         for file in contents {
             autoreleasepool({
-                let filePath = self.watchedPath.stringByAppendingPathComponent(file as String)
+                let filePath = self.watchedPath.stringByAppendingPathComponent(file as! String)
                 let fileAttributes = NSFileManager.defaultManager().attributesOfItemAtPath(filePath, error: nil)
                 
-                let fileSize: Int = fileAttributes![NSFileSize] as Int
-                let fileHash = String("\(file as String)\(fileSize)")
+                let fileSize: Int = fileAttributes![NSFileSize] as! Int
+                let fileHash = String("\(file as! String)\(fileSize)")
                 
                 dm.append(fileHash)
             })

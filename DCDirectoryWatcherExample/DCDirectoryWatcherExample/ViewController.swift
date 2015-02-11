@@ -14,7 +14,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        let directoryWatcher = DCDirectoryWatcher.watchDirectory(NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as String, completionClosure: {
+        let directoryWatcher = DCDirectoryWatcher.watchDirectory(NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as! String, completionClosure: {
             println("Directory changed!")
         })
     }
